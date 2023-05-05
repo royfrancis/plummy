@@ -1,4 +1,4 @@
-# plummy <a href="https://github.com/royfrancis/plummy"> <img src="pkgdown/favicon/android-chrome-192x192.png" align="right" width="48" height="48"></a>
+# plummy <a href="https://github.com/royfrancis/plummy"> <img src="pkgdown/favicon/android-chrome-192x192.png" style="margin-bottom:-10px;" width="48" height="48"></a>
 
 [![ci_badge](https://github.com/royfrancis/plummy/workflows/r-cmd-check/badge.svg)](https://github.com/royfrancis/plummy/actions?workflow=r-cmd-check) [![codecov](https://codecov.io/gh/royfrancis/plummy/branch/main/graph/badge.svg?token=4DOQ8HNQFK)](https://app.codecov.io/gh/royfrancis/plummy/) [![lifecycle_badge](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
@@ -11,5 +11,7 @@ This R package is offered free and without warranty of any kind, either expresse
 ## Contact
 
 If you have an comments, suggestions, corrections or enchancements, kindly submit an issue on the [Github issues page](https://github.com/royfrancis/plummy/issues).  
+
+---
 
 2023 • Roy M Francis
