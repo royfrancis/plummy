@@ -1,0 +1,173 @@
+---
+title: "Usage"
+date: "`r format(Sys.time(), '%d-%b-%Y')`"
+output:
+  html_document:
+    highlight: kate
+    self_contained: false
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(patchwork)
+library(plummy)
+```
+
+## Import
+
+Import fonts the first time.
+
+```{r, eval=FALSE}
+library(extrafont)
+
+plummy::import_inter()
+plummy::import_plex()
+plummy::import_nunito()
+plummy::import_barlow()
+
+# check that font names look right
+extrafont::fonts()
+extrafont::fonttable()
+```
+
+Finally load fonts for use. Run once per session.
+
+```{r, message=FALSE, warning=FALSE}
+extrafont::loadfonts()
+```
+
+## Use theme
+
+Let's create some sample plots.
+
+```{r,fig.height=9.5,fig.width=9}
+p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+    geom_point() +
+    labs(
+        title = "Iris dataset",
+        subtitle = "Comparison of iris species",
+        x = "Sepal length",
+        y = "Sepal width",
+        caption = "Source: Edgar Anderson"
+    )
+p2 <- p1 + theme_inter()
+p3 <- p1 + theme_plex()
+p4 <- p1 + theme_nunito()
+
+wrap_plots(p1, p2, p3, p4, nrow = 2, ncol = 2)
+```
+
+Comparison of default theme, inter, plex and nunito.
+
+To permanently set theme for a session, use
+
+```{r,eval=FALSE}
+library(ggplot2)
+theme_set(theme_inter())
+```
+
+## Use palette
+
+```{r,fig.height=9.5,fig.width=9}
+p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+    geom_point() +
+    labs(
+        title = "Iris dataset",
+        subtitle = "Comparison of iris species",
+        x = "Sepal length",
+        y = "Sepal width",
+        caption = "Source: Edgar Anderson"
+    )+
+    theme(legend.position = "top")
+p2 <- p1 + scale_color_tableau() + theme_inter(grid = "Y", leg = "h")
+p3 <- p1 + scale_color_tableau() + theme_plex(grid = "Y", leg = "h")
+p4 <- p1 + scale_color_tableau() + theme_nunito(grid = "Y", leg = "h")
+
+wrap_plots(p1, p2, p3, p4, nrow = 2, ncol = 2)
+```
+
+Custom color scale, legend in the top and only horizontal gridlines.
+
+```{r,fig.height=5,fig.width=12}
+p2 <- p1 + scale_color_tableau() + theme_inter(axis = FALSE, grid = FALSE, leg = "h")
+p3 <- p1 + scale_color_tableau() + theme_plex(axis = FALSE, grid = FALSE, leg = "h")
+p4 <- p1 + scale_color_tableau() + theme_nunito(axis = FALSE, grid = FALSE, leg = "h")
+
+wrap_plots(p2, p3, p4, nrow = 1)
+```
+
+Plain theme with no axis and no gridlines.
+
+```{r,fig.height=9.5,fig.width=10}
+p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+    geom_point() +
+    facet_grid(~Species)+
+    labs(
+        title = "Iris dataset",
+        subtitle = "Comparison of iris species",
+        x = "Sepal length",
+        y = "Sepal width",
+        caption = "Source: Edgar Anderson"
+    )+
+    theme(legend.position = "top")
+p2 <- p1 + scale_color_tableau() + theme_inter(leg = "h")
+p3 <- p1 + scale_color_tableau() + theme_plex(leg = "h")
+p4 <- p1 + scale_color_tableau() + theme_nunito(leg = "h")
+
+wrap_plots(p1, p2, p3, p4, nrow = 2, ncol = 2)
+```
+
+Facetting.
+
+To permanently set palette for a session, use
+
+```{r,eval=FALSE}
+library(ggplot2)
+options(ggplot2.discrete.colour = palette_tableau()(20))
+options(ggplot2.discrete.fill = palette_tableau()(20))
+```
+
+## Fonts
+
+Available fonts in the package can be listed.
+
+```{r}
+list_fonts()
+```
+
+Below is a preview of fonts.
+
+```{r,fig.height=8,fig.width=9,echo=FALSE}
+dfr <- list_fonts()
+dfr$variant <- factor(dfr$variant,levels=c("thin","light","regular","medium","semibold"))
+dfr1 <- dfr[dfr$variant=="regular",]
+dfr1$label <- paste(c(paste(LETTERS, collapse = ""), "ÅÖÄ\n", paste(letters, collapse = ""), "åöä\n1234567890", "!\"#¤%&/()=?+*~$£@{}[]"), collapse = "")
+
+ggplot(dfr1) +
+    geom_text(aes(x = variant, y = font, label = label,family = font), size = 7.5) +
+    theme_minimal() +
+    theme(
+        panel.grid = element_blank(),
+        axis.title = element_blank(),
+        axis.text.x = element_blank()
+    )
+```
+
+Below is an overview of all fonts and it's variants.
+
+```{r,fig.height=5,fig.width=10,echo=FALSE}
+ggplot(dfr,aes(x=family,y=variant))+
+    geom_text(aes(label=font, family=font),size=5)+
+    theme_minimal() +
+    theme(
+        panel.grid = element_blank(),
+        axis.title = element_blank()
+    )
+```
+
+It is also possible to use custom fonts by providing font names to the `family` arguments in `theme_custom()`.

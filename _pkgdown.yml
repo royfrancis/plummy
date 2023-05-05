@@ -1,0 +1,46 @@
+title: plummy
+url: https://github.com/royfrancis/plummy
+template:
+  bootstrap: 5
+  bootswatch: pulse
+  bslib:
+    pkgdown-nav-height: 100px
+    primary: "#be4150"
+
+authors:
+  Roy Francis:
+    href: https://royfrancis.com
+
+navbar:
+  structure:
+    left:
+    - home
+    - articles
+    - reference
+    - news
+    right:
+    - github
+  components:
+    home:
+      text: Home
+      icon: fa-home
+      href: index.html
+    articles:
+      text: Articles
+      icon: fa-file
+      href: articles/index.html
+    reference:
+      text: Reference
+      icon: fa-book
+      href: reference/index.html
+    news:
+      text: Versions
+      icon: fa-history
+      href: news/index.html
+    github:
+      icon: fa-github fa-lg fas
+      href: https://github.com/royfrancis/plummy
+
+home:
+  sidebar:
+    structure: [links, license, authors, dev]

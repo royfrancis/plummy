@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^docs/
+^.git
+^.github
+LICENSE
+vignettes/
+_pkgdown.yml
+index.md
+pkgdown/
+NEWS.md
+^.*\.log$
+man/figures/*
