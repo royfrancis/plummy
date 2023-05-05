@@ -22,4 +22,5 @@ pkg::pkg_install("royfrancis/plummy")
 
 ### Acknowledgements
 
-The code is modified from [hrbrmstr](https://github.com/hrbrmstr/hrbplummys).
+- The code is modified from [hrbrmstr](https://github.com/hrbrmstr/hrbplummys)
+- Credit to <span><a href="https://www.flaticon.com/"><img src="man/figures/flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.

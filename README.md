@@ -8,6 +8,11 @@
 
 This R package is offered free and without warranty of any kind, either expressed or implied. I will not be held liable to you for any damage arising out of the use, modification or inability to use this program. This R package can be used, redistributed and/or modified freely for non-commercial purposes subject to the original source being properly cited. Licensed under GPL-3.  
 
+## Acknowledgements
+
+- The code is modified from [hrbrmstr](https://github.com/hrbrmstr/hrbplummys)
+- Credit to <span><a href="https://www.flaticon.com/"><img src="man/figures/flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
+
 ## Contact
 
 If you have an comments, suggestions, corrections or enchancements, kindly submit an issue on the [Github issues page](https://github.com/royfrancis/plummy/issues).  
