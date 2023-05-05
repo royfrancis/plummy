@@ -123,7 +123,7 @@
 <span><span class="co"># check that font names look right</span></span>
 <span><span class="fu">extrafont</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/fonts.html" class="external-link">fonts</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">extrafont</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/fonttable.html" class="external-link">fonttable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>Finally load fonts for use. Run once per session.</p>
+<p>Load fonts for use. Run once per session.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">extrafont</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/loadfonts.html" class="external-link">loadfonts</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -147,8 +147,9 @@
 <span></span>
 <span><span class="fu"><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html" class="external-link">wrap_plots</a></span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span>, <span class="va">p3</span>, <span class="va">p4</span>, nrow <span class="op">=</span> <span class="fl">2</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="864"></p>
-<p>Comparison of default theme, inter, plex and nunito.</p>
-<p>To permanently set theme for a session, use</p>
+<p><strong>Fig:</strong> Comparison of default theme, inter, plex and
+nunito.</p>
+<p>To set theme for all plots in a session, use</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html" class="external-link">theme_set</a></span><span class="op">(</span><span class="fu"><a href="../reference/theme_font.html">theme_inter</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -173,8 +174,8 @@
 <span></span>
 <span><span class="fu"><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html" class="external-link">wrap_plots</a></span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span>, <span class="va">p3</span>, <span class="va">p4</span>, nrow <span class="op">=</span> <span class="fl">2</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="864"></p>
-<p>Custom color scale, legend in the top and only horizontal
-gridlines.</p>
+<p><strong>Fig:</strong> Custom color scale, legend in placed on the top
+and only horizontal gridlines are displayed.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="va">p1</span> <span class="op">+</span> <span class="fu"><a href="../reference/scale_tableau.html">scale_color_tableau</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="../reference/theme_font.html">theme_inter</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="cn">FALSE</span>, grid <span class="op">=</span> <span class="cn">FALSE</span>, leg <span class="op">=</span> <span class="st">"h"</span><span class="op">)</span></span>
 <span><span class="va">p3</span> <span class="op">&lt;-</span> <span class="va">p1</span> <span class="op">+</span> <span class="fu"><a href="../reference/scale_tableau.html">scale_color_tableau</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="../reference/theme_font.html">theme_plex</a></span><span class="op">(</span>axis <span class="op">=</span> <span class="cn">FALSE</span>, grid <span class="op">=</span> <span class="cn">FALSE</span>, leg <span class="op">=</span> <span class="st">"h"</span><span class="op">)</span></span>
@@ -182,7 +183,7 @@ gridlines.</p>
 <span></span>
 <span><span class="fu"><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html" class="external-link">wrap_plots</a></span><span class="op">(</span><span class="va">p2</span>, <span class="va">p3</span>, <span class="va">p4</span>, nrow <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <p><img src="index_files/figure-html/unnamed-chunk-7-1.png" width="1152"></p>
-<p>Plain theme with no axis and no gridlines.</p>
+<p><strong>Fig:</strong> Plain theme with no axis and no gridlines.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">Sepal.Length</span>, <span class="va">Sepal.Width</span>, color <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -201,8 +202,8 @@ gridlines.</p>
 <span></span>
 <span><span class="fu"><a href="https://patchwork.data-imaginist.com/reference/wrap_plots.html" class="external-link">wrap_plots</a></span><span class="op">(</span><span class="va">p1</span>, <span class="va">p2</span>, <span class="va">p3</span>, <span class="va">p4</span>, nrow <span class="op">=</span> <span class="fl">2</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <p><img src="index_files/figure-html/unnamed-chunk-8-1.png" width="960"></p>
-<p>Facetting.</p>
-<p>To permanently set palette for a session, use</p>
+<p><strong>Fig:</strong> Example with facetting.</p>
+<p>To set palette for all plots in a session, use</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>ggplot2.discrete.colour <span class="op">=</span> <span class="fu"><a href="../reference/palette_tableau.html">palette_tableau</a></span><span class="op">(</span><span class="op">)</span><span class="op">(</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span></span>
@@ -238,8 +239,9 @@ gridlines.</p>
 <p><img src="index_files/figure-html/unnamed-chunk-11-1.png" width="864"></p>
 <p>Below is an overview of all fonts and it’s variants.</p>
 <p><img src="index_files/figure-html/unnamed-chunk-12-1.png" width="960"></p>
-<p>It is also possible to use custom fonts by providing font names to
-the <code>family</code> arguments in <code><a href="../reference/theme_custom.html">theme_custom()</a></code>.</p>
+<p>It is also possible to cusstomise the themes avilable within the
+package or to use custom fonts by providing font names to the
+<code>family</code> arguments in <code><a href="../reference/theme_custom.html">theme_custom()</a></code>.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

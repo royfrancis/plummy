@@ -2,7 +2,7 @@
 
 [![ci_badge](https://github.com/royfrancis/plummy/workflows/r-cmd-check/badge.svg)](https://github.com/royfrancis/plummy/actions?workflow=r-cmd-check) [![codecov](https://codecov.io/gh/royfrancis/plummy/branch/main/graph/badge.svg?token=4DOQ8HNQFK)](https://app.codecov.io/gh/royfrancis/plummy/) [![lifecycle_badge](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
-`plummy` is an R package to create custom ggplot2 themes. See the [project website](http://royfrancis.github.io/plummy) for more details.
+`plummy` is an R package with custom ggplot2 themes. See the [project website](http://royfrancis.github.io/plummy) for more details.
 
 ## Disclaimer
 
@@ -10,7 +10,7 @@ This R package is offered free and without warranty of any kind, either expresse
 
 ## Acknowledgements
 
-- The code is modified from [hrbrmstr](https://github.com/hrbrmstr/hrbplummys)
+- This code is adapted from [hrbrmstr](https://github.com/hrbrmstr/hrbrthemes)
 - Credit to <span><a href="https://www.flaticon.com/"><img src="man/figures/flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
 
 ## Contact

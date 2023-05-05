@@ -4,23 +4,19 @@
 
 An R package with custom ggplot2 themes.
 
-### Usage
-#### Installation  
-
-Install dependencies:
+### Installation
 
 ```
-pak::pkg_install(c("ggplot2","scales","extrafont"))
-```
-
-This package can be installed as follows:
-
-```
-install.packages("pak")
+install.packages(c("ggplot2", "scales", "extrafont", "pak"),
+                 repos="https://cloud.r-project.org/")
 pkg::pkg_install("royfrancis/plummy")
 ```
 
 ### Acknowledgements
 
-- The code is modified from [hrbrmstr](https://github.com/hrbrmstr/hrbplummys)
+- This code is adapted from [hrbrmstr](https://github.com/hrbrmstr/hrbrthemes)
 - Credit to <span><a href="https://www.flaticon.com/"><img src="man/figures/flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
+
+### Disclaimer
+
+This R package is offered free and without warranty of any kind, either expressed or implied. I will not be held liable to you for any damage arising out of the use, modification or inability to use this program. This R package can be used, redistributed and/or modified freely for non-commercial purposes subject to the original source being properly cited. Licensed under GPL-3.  

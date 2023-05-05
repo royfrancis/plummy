@@ -35,7 +35,7 @@ extrafont::fonts()
 extrafont::fonttable()
 ```
 
-Finally load fonts for use. Run once per session.
+Load fonts for use. Run once per session.
 
 ```{r, message=FALSE, warning=FALSE}
 extrafont::loadfonts()
@@ -62,9 +62,9 @@ p4 <- p1 + theme_nunito()
 wrap_plots(p1, p2, p3, p4, nrow = 2, ncol = 2)
 ```
 
-Comparison of default theme, inter, plex and nunito.
+**Fig:** Comparison of default theme, inter, plex and nunito.
 
-To permanently set theme for a session, use
+To set theme for all plots in a session, use
 
 ```{r,eval=FALSE}
 library(ggplot2)
@@ -91,7 +91,7 @@ p4 <- p1 + scale_color_tableau() + theme_nunito(grid = "Y", leg = "h")
 wrap_plots(p1, p2, p3, p4, nrow = 2, ncol = 2)
 ```
 
-Custom color scale, legend in the top and only horizontal gridlines.
+**Fig:** Custom color scale, legend in placed on the top and only horizontal gridlines are displayed.
 
 ```{r,fig.height=5,fig.width=12}
 p2 <- p1 + scale_color_tableau() + theme_inter(axis = FALSE, grid = FALSE, leg = "h")
@@ -101,7 +101,7 @@ p4 <- p1 + scale_color_tableau() + theme_nunito(axis = FALSE, grid = FALSE, leg 
 wrap_plots(p2, p3, p4, nrow = 1)
 ```
 
-Plain theme with no axis and no gridlines.
+**Fig:** Plain theme with no axis and no gridlines.
 
 ```{r,fig.height=9.5,fig.width=10}
 p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
@@ -122,9 +122,9 @@ p4 <- p1 + scale_color_tableau() + theme_nunito(leg = "h")
 wrap_plots(p1, p2, p3, p4, nrow = 2, ncol = 2)
 ```
 
-Facetting.
+**Fig:** Example with facetting.
 
-To permanently set palette for a session, use
+To set palette for all plots in a session, use
 
 ```{r,eval=FALSE}
 library(ggplot2)
@@ -170,4 +170,4 @@ ggplot(dfr,aes(x=family,y=variant))+
     )
 ```
 
-It is also possible to use custom fonts by providing font names to the `family` arguments in `theme_custom()`.
+It is also possible to cusstomise the themes avilable within the package or to use custom fonts by providing font names to the `family` arguments in `theme_custom()`.
