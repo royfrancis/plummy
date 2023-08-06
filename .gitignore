@@ -1,0 +1,8 @@
+*.Rproj
+.Rproj.user
+.Rhistory
+*.gz
+*.check
+to-do.txt
+notes.txt
+.DS_Store
