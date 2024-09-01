@@ -1,8 +1,12 @@
 *.Rproj
 .Rproj.user
 .Rhistory
+.Rdata
+.Ruserdata
 *.gz
 *.check
 to-do.txt
 notes.txt
+.DS_Store
+.quarto
 .DS_Store

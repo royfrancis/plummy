@@ -4,6 +4,11 @@
 
 `plummy` is an R package with custom ggplot2 themes. See the [project website](http://royfrancis.github.io/plummy) for more details.
 
+```r
+install.packages(c("ggplot2","sysfonts","showtext","remotes"))
+remotes::install_github('royfrancis/plummy')
+```
+
 ## Disclaimer
 
 This R package is offered free and without warranty of any kind, either expressed or implied. I will not be held liable to you for any damage arising out of the use, modification or inability to use this program. This R package can be used, redistributed and/or modified freely for non-commercial purposes subject to the original source being properly cited. Licensed under GPL-3.  
@@ -11,7 +16,7 @@ This R package is offered free and without warranty of any kind, either expresse
 ## Acknowledgements
 
 - This code is adapted from [hrbrmstr](https://github.com/hrbrmstr/hrbrthemes)
-- Credit to <span><a href="https://www.flaticon.com/"><img src="man/figures/flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
+- Credit to <span><a href="https://www.flaticon.com/"><img src="pkgdown/favicon/flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
 
 ## Contact
 
@@ -19,4 +24,4 @@ If you have an comments, suggestions, corrections or enchancements, kindly submi
 
 ---
 
-2023 • Roy M Francis
+2024 • Roy M Francis  

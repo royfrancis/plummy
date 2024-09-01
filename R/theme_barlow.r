@@ -1,50 +1,55 @@
-#' ggplot2 theme using custom font
-#'
+#' Import font for use in ggplot2 graphs
 #' @md
-#' @note You should import fonts first and also install the fonts on your
-#' system before trying to use this theme.
-#'
-#' @rdname theme_font
-#' @param ... Arguments passed to `plummy::theme_custom()`
+#' @rdname import_font
+#' @importFrom sysfonts font_add
 #' @export
 #'
-theme_barlow <- function(...) {
-    theme_custom(
-        base_family = "Barlow",
-        base_size = 11.5,
-        plot_title_family = "Barlow SemiBold",
-        plot_title_margin = 10,
-        subtitle_family = "Barlow",
-        subtitle_margin = 15,
-        strip_text_family = "Barlow Medium",
-        caption_family = "Barlow Light",
-        caption_margin = 10,
-        axis_title_family = "Barlow",
-        axis_text_family = "Barlow Light",
-        ...
-    )
+import_barlow <- function() {
+  font_dir <- system.file("fonts", "barlow", package = "plummy")
+  
+  font_add(
+    family = "barlow", 
+    regular = file.path(font_dir, "Barlow-Regular.ttf"),
+    bold = file.path(font_dir, "Barlow-SemiBold.ttf"),
+    italic = file.path(font_dir, "Barlow-Italic.ttf"),
+    bolditalic = file.path(font_dir, "Barlow-SemiBoldItalic.ttf")
+  )
+
+  # font_add(family = "barlow-100-thin", file.path(font_dir, "Barlow-Thin.ttf"))
+  # font_add(family = "barlow-100-thinitalic", file.path(font_dir, "Barlow-ThinItalic.ttf"))
+  # font_add(family = "barlow-200-extralight", file.path(font_dir, "Barlow-ExtraLight.ttf"))
+  # font_add(family = "barlow-200-extralightitalic", file.path(font_dir, "Barlow-ExtraLightItalic.ttf"))
+  font_add(family = "barlow-300-light", file.path(font_dir, "Barlow-Light.ttf"))
+  font_add(family = "barlow-300-lightitalic", file.path(font_dir, "Barlow-LightItalic.ttf"))
+  font_add(family = "barlow-400-regular", file.path(font_dir, "Barlow-Regular.ttf"))
+  font_add(family = "barlow-400-regularitalic", file.path(font_dir, "Barlow-Italic.ttf"))
+  font_add(family = "barlow-500-medium", file.path(font_dir, "Barlow-Medium.ttf"))
+  font_add(family = "barlow-500-mediumitalic", file.path(font_dir, "Barlow-MediumItalic.ttf"))
+  font_add(family = "barlow-600-semibold", file.path(font_dir, "Barlow-SemiBold.ttf"))
+  font_add(family = "barlow-600-semibolditalic", file.path(font_dir, "Barlow-SemiBoldItalic.ttf"))
+  font_add(family = "barlow-700-bold", file.path(font_dir, "Barlow-Bold.ttf"))
+  font_add(family = "barlow-700-bolditalic", file.path(font_dir, "Barlow-BoldItalic.ttf"))
+  # font_add(family = "barlow-800-extrabold", file.path(font_dir, "Barlow-ExtraBold.ttf"))
+  # font_add(family = "barlow-800-extrabolditalic", file.path(font_dir, "Barlow-ExtraBoldItalic.ttf"))
+  # font_add(family = "barlow-900-black", file.path(font_dir, "Barlow-Black.ttf"))
+  # font_add(family = "barlow-900-blackitalic", file.path(font_dir, "Barlow-BlackItalic.ttf"))
 }
 
-#' Import font for use in charts
-#'
 #' @md
-#' @note Remember to run `extrafont::loadfonts()` after import. The location of the
-#'   font directory is displayed after the base import is complete. It is highly
-#'   recommended that you install them on your system the same way you would any
-#'   other font you wish to use in other programs.
-#' @rdname import_font
-#' @importFrom extrafont font_import
+#' @rdname theme_grid
+#' @param ... Arguments passed to `plummy::theme_grid()`
 #' @export
-#' 
-import_barlow <- function() {
-    font_dir <- system.file("fonts", "barlow", package = "plummy")
-
-    suppressWarnings(suppressMessages(extrafont::font_import(font_dir, prompt = FALSE)))
-
-    message(
-        sprintf(
-            "You will likely need to install these fonts on your system as well.\n\nYou can find them in [%s]",
-            font_dir
-        )
-    )
+#'
+theme_grid_barlow <- function(...) {
+  theme_grid(
+    base_family = "barlow-400-regular",
+    base_size = 11.5,
+    title_family = "barlow-600-semibold",
+    subtitle_family = "barlow-500-medium",
+    strip_text_family = "barlow-500-medium",
+    caption_family = "barlow-300-light",
+    axis_title_family = "barlow-400-regular",
+    axis_text_family = "barlow-300-light",
+    ...
+  )
 }

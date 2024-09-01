@@ -1,0 +1,269 @@
+---
+title: "Usage"
+subtitle: "Using custom themes in ggplot2"
+date: last-modified
+date-format: "DD-MMM-YYYY"
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-overflow: wrap
+---
+
+```{r}
+library(ggplot2)
+library(patchwork)
+library(plummy)
+library(showtext)
+```
+
+## Import
+
+Import fonts and enable showtext once per session. 
+
+```{r}
+plummy::import_barlow()
+plummy::import_inter()
+plummy::import_plex()
+plummy::import_nunito()
+plummy::import_lato()
+
+# list available fonts
+# sysfonts::font_families()
+```
+
+The `showtext` package is used to render the fonts on graphics devices. To automatically handle font rendering, set `showtext::showtext_auto()`. When exporting plots, set `showtext_opts(dpi = 300)`. In Rmd/quarto documents, set:
+
+```
+knitr:
+  opts_knit:
+    fig.showtext: true
+```
+
+```{r}
+# enable showtext for interactive use
+showtext::showtext_auto()
+# for exporting, set dpi
+# showtext_opts(dpi = 300)
+```
+
+## Use theme
+
+Let's create some sample plots.
+
+```{r}
+#| fig-height: 4.5
+#| fig-width: 9
+#| label: fig-compare-default-custom
+#| fig-cap: Comparison of default theme and the grid theme.
+
+p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point() +
+  labs(
+    title = "Iris dataset",
+    subtitle = "Comparison of iris species",
+    x = "Sepal length",
+    y = "Sepal width",
+    caption = "Source: Edgar Anderson"
+  )
+p2 <- p1 + theme_minimal()
+wrap_plots(p1, p2, ncol = 2)
+```
+
+```{r}
+#| fig-height: 9
+#| fig-width: 9
+#| label: fig-compare-themes
+#| fig-cap: Comparison of grid theme with barlow, inter, plex and nunito fonts.
+
+p2 <- p1 + plummy(family = "barlow")
+p3 <- p1 + plummy(family = "inter")
+p4 <- p1 + plummy(family = "plex")
+p5 <- p1 + plummy(family = "nunito")
+
+wrap_plots(p2, p3, p4, p5, nrow = 2, ncol = 2)
+```
+
+To set theme for all plots in a session, use
+
+```{r}
+#| eval: false
+library(ggplot2)
+theme_set(plummy(family = "inter"))
+```
+
+## Color palettes
+
+The package includes a few custom color palettes.
+
+```{r}
+#| fig-height: 1.9
+#| fig-width: 9
+#| echo: false
+
+color_df <- data.frame(
+  colors = c(palette_morris()(10), palette_okabeito()(8), palette_strong()(17), palette_tableau()(20)),
+  group = c(rep("morris", 10), rep("okabeito", 8), rep("strong", 17), rep("tableau", 20)),
+  pos = c(1:10, 1:8, 1:17, 1:20)
+)
+
+ggplot(color_df, aes(x = pos, y = group, color = colors)) +
+  geom_point(size = 10) +
+  scale_color_identity() +
+  labs(y = NULL, x = NULL) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    panel.background = element_blank(),
+    legend.position = "none"
+  )
+```
+
+
+```{r}
+#| fig-height: 9
+#| fig-width: 9.5
+#| label: fig-colors
+#| fig-cap: Overview of the custom color scales
+
+p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point() +
+  labs(
+    title = "Iris dataset",
+    subtitle = "Comparison of iris species",
+    x = "Sepal length",
+    y = "Sepal width",
+    caption = "Source: Edgar Anderson"
+  )
+
+p2 <- p1 + scale_color_tableau() + plummy()
+p3 <- p1 + scale_color_strong() + plummy()
+p4 <- p1 + scale_color_morris() + plummy()
+p5 <- p1 + scale_color_okabeito() + plummy()
+wrap_plots(p2, p3, p4, p5, ncol = 2, nrow = 2)
+```
+
+```{r}
+#| fig-height: 9
+#| fig-width: 9.5
+#| label: fig-grid
+#| fig-cap: Custom color scale, legend in placed on the top and customized gridlines.
+
+p2 <- p1 + scale_color_tableau() + plummy(family = "barlow", grid = "Y", leg = "h")
+p3 <- p1 + scale_color_tableau() + plummy(family = "inter", grid = "y", leg = "h")
+p4 <- p1 + scale_color_tableau() + plummy(family = "plex", grid = "X", leg = "h")
+p5 <- p1 + scale_color_tableau() + plummy(family = "nunito", grid = FALSE, leg = "h")
+
+wrap_plots(p2, p3, p4, p5, nrow = 2, ncol = 2)
+```
+
+```{r}
+#| fig-height: 9
+#| fig-width: 9.5
+#| label: fig-facetting
+#| fig-cap: Example with facetting.
+
+p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+  geom_point() +
+  facet_grid(~Species) +
+  labs(
+    title = "Iris dataset",
+    subtitle = "Comparison of iris species",
+    x = "Sepal length",
+    y = "Sepal width",
+    caption = "Source: Edgar Anderson"
+  ) +
+  theme(legend.position = "top")
+p2 <- p1 + scale_color_tableau() + plummy(title_margin = margin(b = 2), family = "inter", leg = "h")
+p3 <- p1 + scale_color_strong() + plummy(title_margin = margin(b = 2), family = "plex", leg = "h")
+p4 <- p1 + scale_color_morris() + plummy(title_margin = margin(b = 2), family = "nunito", leg = "h")
+
+wrap_plots(p1, p2, p3, p4, nrow = 2, ncol = 2)
+```
+
+To set palette for all plots in a session, use
+
+```{r}
+#| eval: false
+options(ggplot2.discrete.colour = palette_tableau()(20))
+options(ggplot2.discrete.fill = palette_tableau()(20))
+```
+
+## Fonts
+
+Available fonts in the package can be listed using `list_fonts()`. Below is a preview of fonts.
+
+```{r}
+#| fig-height: 7
+#| fig-width: 7
+#| echo: false
+#| label: fig-preview-families
+#| fig-cap: Preview of font families
+
+dfr <- list_fonts()
+dfr <- dfr[!grepl("Italic", dfr$font), ]
+dfr$font <- factor(dfr$font, levels = c("Thin", "ExtraLight", "Light", "Regular", "Medium", "SemiBold", "Bold", "ExtraBold", "Black"))
+
+dfr1 <- dfr[dfr$font == "Regular", ]
+dfr1$label <- paste(c(paste(LETTERS, collapse = ""), "ÅÖÄ\n", paste(letters, collapse = ""), "åöä\n1234567890", "!\"#¤%&/()=?+*~$£@{}[]"), collapse = "")
+
+ggplot(dfr1) +
+  geom_text(aes(x = font, y = family, label = label, family = name), size = 6) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text.x = element_blank()
+  )
+```
+
+```{r}
+#| fig-height: 2
+#| fig-width: 8
+#| echo: false
+#| label: fig-preview-fonts
+#| fig-cap: Preview of font families and fonts
+
+ggplot(dfr, aes(x = family, y = font)) +
+  geom_text(aes(label = font, family = name), size = 5) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.title = element_blank()
+  )
+```
+
+## Text geoms
+
+Text in geoms are not controlled by theme. Geoms with text can be updated with custom font using `update_geom_font()`.
+
+```{r}
+p2 <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+  geom_point() +
+  geom_text(data = iris[1:5, ], aes(label = Species)) +
+  labs(
+    title = "Iris dataset",
+    subtitle = "Comparison of iris species",
+    x = "Sepal length",
+    y = "Sepal width",
+    caption = "Source: Edgar Anderson"
+  )
+
+update_geom_font(family = "barlow")
+p2 + plummy(family = "barlow")
+```
+
+## Custom google font
+
+It is also possible to use any google font by providing font names to the `family` argument in `plummy()`.
+
+```{r}
+sysfonts::font_add_google(name = "Roboto Slab", family = "robotoslab")
+update_geom_font(family = "robotoslab")
+
+update_geom_font(family = "robotoslab")
+p2 + plummy(family = "robotoslab")
+```

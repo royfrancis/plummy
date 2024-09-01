@@ -2,7 +2,7 @@ title: plummy
 url: https://github.com/royfrancis/plummy
 template:
   bootstrap: 5
-  bootswatch: pulse
+  bootswatch: zephyr
   bslib:
     pkgdown-nav-height: 100px
     primary: "#be4150"
@@ -44,3 +44,54 @@ navbar:
 home:
   sidebar:
     structure: [links, license, authors, dev]
+
+reference:
+
+- title: Import fonts
+  desc: >
+    Functions to import fonts
+  contents:
+  - import_barlow
+  - import_inter
+  - import_lato
+  - import_nunito
+  - import_plex
+
+- title: Use custom ggplot2 theme
+  desc: >
+    Use ggplot2 theme with custom style and font
+  contents:
+  - plummy
+
+- title: Color palettes
+  desc: >
+    Custom color palettes
+  contents:
+  - palette_tableau
+  - scale_colour_tableau
+  - scale_fill_tableau
+  - palette_strong
+  - scale_colour_strong
+  - scale_fill_strong
+  - palette_morris
+  - scale_colour_morris
+  - scale_fill_morris
+  - palette_okabeito
+  - scale_colour_okabeito
+  - scale_fill_okabeito
+
+- title: Use custom ggplot2 theme
+  desc: >
+    Low level ggplot2 themes
+  contents:
+  - theme_grid
+  - theme_grid_barlow
+  - theme_grid_inter
+  - theme_grid_lato
+  - theme_grid_nunito
+  - theme_grid_plex
+
+- title: Other
+  contents:
+  - update_geom_font
+  - list_fonts

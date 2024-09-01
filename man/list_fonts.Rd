@@ -7,8 +7,8 @@
 list_fonts()
 }
 \value{
-Returns a data.frame with font, family and variant. The font is used for plotting.
+Returns a data.frame with name, family, font, weight and path. The name is used as 'family' when plotting.
 }
 \description{
-Lists all fonts, families and variants
+Lists all fonts and families.
 }

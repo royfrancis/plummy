@@ -1,40 +1,50 @@
-#' ggplot2 theme using custom font
-#' @rdname theme_font
-#' @param ... Arguments passed to `plummy::theme_custom()`
+#' @rdname import_font
+#' @importFrom sysfonts font_add
 #' @export
 #'
-theme_nunito <- function(...) {
-    theme_custom(
-        base_family = "Nunito",
-        base_size = 11.5,
-        plot_title_family = "Nunito Semi Bold",
-        plot_title_margin = 10,
-        subtitle_family = "Nunito",
-        subtitle_margin = 15,
-        strip_text_family = "Nunito Medium",
-        caption_family = "Nunito Light",
-        caption_margin = 10,
-        axis_title_family = "Nunito",
-        axis_text_family = "Nunito Light",
-        ...
-    )
+import_nunito <- function() {
+  font_dir <- system.file("fonts", "nunito", package = "plummy")
+
+  font_add(
+    family = "nunito", 
+    regular = file.path(font_dir, "Nunito-Regular.ttf"),
+    bold = file.path(font_dir, "Nunito-SemiBold.ttf"),
+    italic = file.path(font_dir, "Nunito-Italic.ttf"),
+    bolditalic = file.path(font_dir, "Nunito-SemiBoldItalic.ttf")
+  )
+  
+  # font_add(family = "nunito-200-extralight", file.path(font_dir, "Nunito-ExtraLight.ttf"))
+  # font_add(family = "nunito-200-extralightitalic", file.path(font_dir, "Nunito-ExtraLightItalic.ttf"))
+  font_add(family = "nunito-300-light", file.path(font_dir, "Nunito-Light.ttf"))
+  font_add(family = "nunito-300-lightitalic", file.path(font_dir, "Nunito-LightItalic.ttf"))
+  font_add(family = "nunito-400-regular", file.path(font_dir, "Nunito-Regular.ttf"))
+  font_add(family = "nunito-400-regularitalic", file.path(font_dir, "Nunito-Italic.ttf"))
+  font_add(family = "nunito-500-medium", file.path(font_dir, "Nunito-Medium.ttf"))
+  font_add(family = "nunito-500-mediumitalic", file.path(font_dir, "Nunito-MediumItalic.ttf"))
+  font_add(family = "nunito-600-semibold", file.path(font_dir, "Nunito-SemiBold.ttf"))
+  font_add(family = "nunito-600-semibolditalic", file.path(font_dir, "Nunito-SemiBoldItalic.ttf"))
+  font_add(family = "nunito-700-bold", file.path(font_dir, "Nunito-Bold.ttf"))
+  font_add(family = "nunito-700-bolditalic", file.path(font_dir, "Nunito-BoldItalic.ttf"))
+  # font_add(family = "nunito-800-extrabold", file.path(font_dir, "Nunito-ExtraBold.ttf"))
+  # font_add(family = "nunito-800-extrabolditalic", file.path(font_dir, "Nunito-ExtraBoldItalic.ttf"))
+  # font_add(family = "nunito-900-black", file.path(font_dir, "Nunito-Black.ttf"))
+  # font_add(family = "nunito-900-blackitalic", file.path(font_dir, "Nunito-BlackItalic.ttf"))
 }
 
-#' Import font for use in charts
-#'
-#' @rdname import_font
-#' @importFrom extrafont font_import
+#' @rdname theme_grid
+#' @param ... Arguments passed to `plummy::theme_grid()`
 #' @export
-#' 
-import_nunito <- function() {
-    font_dir <- system.file("fonts", "nunito", package = "plummy")
-
-    suppressWarnings(suppressMessages(extrafont::font_import(font_dir, prompt = FALSE)))
-
-    message(
-        sprintf(
-            "You will likely need to install these fonts on your system as well.\n\nYou can find them in [%s]",
-            font_dir
-        )
-    )
+#'
+theme_grid_nunito <- function(...) {
+  theme_grid(
+    base_family = "nunito-400-regular",
+    base_size = 11.5,
+    title_family = "nunito-600-semibold",
+    subtitle_family = "nunito-500-medium",
+    strip_text_family = "nunito-500-medium",
+    caption_family = "nunito-300-light",
+    axis_title_family = "nunito-400-regular",
+    axis_text_family = "nunito-300-light",
+    ...
+  )
 }

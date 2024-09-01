@@ -7,15 +7,15 @@ An R package with custom ggplot2 themes.
 ### Installation
 
 ```
-install.packages(c("ggplot2", "scales", "extrafont", "pak"),
-                 repos="https://cloud.r-project.org/")
-pkg::pkg_install("royfrancis/plummy")
+install.packages(c("ggplot2", "scales", "showtext", "remotes"), 
+  repos="https://cloud.r-project.org/")
+remotes::install_github("royfrancis/plummy")
 ```
 
 ### Acknowledgements
 
 - This code is adapted from [hrbrmstr](https://github.com/hrbrmstr/hrbrthemes)
-- Credit to <span><a href="https://www.flaticon.com/"><img src="man/figures/flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
+- Credit to <span><a href="https://www.flaticon.com/"><img src="flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
 
 ### Disclaimer
 

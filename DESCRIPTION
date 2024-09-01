@@ -1,11 +1,11 @@
 Package: plummy
 Type: Package
 Title: Themes for ggplot2
-Version: 0.1
-Date: 2023-04-05
-Authors@R: person("Roy", "Francis", email = "roy.m.francis@outlook.com", role = c("aut", "cre"))
-Maintainer: Roy Francis <roy.m.francis@outlook.com>
-Description: Custom ggplot2 themes.
+Version: 0.2
+Date: 2024-09-01
+Authors@R: person("Roy", "Francis", email = "zydoosu@gmail.com", role = c("aut", "cre"))
+Maintainer: Roy Francis <zydoosu@gmail.com>
+Description: Custom ggplot2 themes with custom fonts.
 URL: http://github.com/royfrancis/plummy
 BugReports: https://github.com/royfrancis/plummy/issues
 License: GPL (>= 3)
@@ -15,7 +15,8 @@ Depends:
 Imports:
     ggplot2 (>= 3.3.0),
     scales,
-    extrafont
+    sysfonts
 Suggests:
-    testthat
-RoxygenNote: 7.2.3
+    testthat,
+    showtext
+RoxygenNote: 7.3.2
