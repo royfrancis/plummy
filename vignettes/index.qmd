@@ -54,8 +54,8 @@ Let's create some sample plots.
 ```{r}
 #| fig-height: 4.5
 #| fig-width: 9
-#| label: fig-compare-default-custom
-#| fig-cap: Comparison of default theme and the grid theme.
+#| label: fig-compare-default-minimal
+#| fig-cap: Comparison of default theme and the minimal theme.
 
 p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
   geom_point() +
@@ -69,6 +69,20 @@ p1 <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
 p2 <- p1 + theme_minimal()
 wrap_plots(p1, p2, ncol = 2)
 ```
+
+Now let's try the plummy theme.
+
+```{r}
+#| fig-height: 4.5
+#| fig-width: 9
+#| label: fig-compare-minimal-plummy
+#| fig-cap: Comparison of minimal theme and plummy theme.
+
+p3 <- p1 + plummy()
+wrap_plots(p2, p3, ncol = 2)
+```
+
+Now let's try the plummy theme with custom fonts.
 
 ```{r}
 #| fig-height: 9
@@ -122,6 +136,7 @@ ggplot(color_df, aes(x = pos, y = group, color = colors)) +
   )
 ```
 
+A preview of the color schemes.
 
 ```{r}
 #| fig-height: 9
@@ -146,6 +161,8 @@ p5 <- p1 + scale_color_okabeito() + plummy()
 wrap_plots(p2, p3, p4, p5, ncol = 2, nrow = 2)
 ```
 
+Below are examples of some of the customizations available in the plummy theme.
+
 ```{r}
 #| fig-height: 9
 #| fig-width: 9.5
@@ -159,6 +176,8 @@ p5 <- p1 + scale_color_tableau() + plummy(family = "nunito", grid = FALSE, leg =
 
 wrap_plots(p2, p3, p4, p5, nrow = 2, ncol = 2)
 ```
+
+Next we take a look at examples with facetting.
 
 ```{r}
 #| fig-height: 9
@@ -238,7 +257,7 @@ ggplot(dfr, aes(x = family, y = font)) +
 
 ## Text geoms
 
-Text in geoms are not controlled by theme. Geoms with text can be updated with custom font using `update_geom_font()`.
+Text in geoms are not controlled by theme. As an example, the plot below uses the plummy theme, but the `geom_text()` labels do not change to the theme font.
 
 ```{r}
 p2 <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
@@ -252,8 +271,14 @@ p2 <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
     caption = "Source: Edgar Anderson"
   )
 
-update_geom_font(family = "barlow")
-p2 + plummy(family = "barlow")
+p2 + plummy(family = "nunito")
+```
+
+Geoms with text can be updated with custom font using `update_geom_font()`.
+
+```{r}
+update_geom_font(family = "nunito")
+p2 + plummy(family = "nunito")
 ```
 
 ## Custom google font
