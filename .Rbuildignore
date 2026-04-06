@@ -3,7 +3,6 @@
 ^docs/
 ^.git
 ^.github
-LICENSE
 vignettes/
 _pkgdown.yml
 index.md
@@ -13,4 +12,3 @@ NEWS.md
 man/figures/*
 to-do.txt
 ^LICENSE\.md$
-LICENSE
