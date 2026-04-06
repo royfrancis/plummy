@@ -12,3 +12,5 @@ NEWS.md
 ^.*\.log$
 man/figures/*
 to-do.txt
+^LICENSE\.md$
+LICENSE

@@ -6,17 +6,21 @@ An R package with custom ggplot2 themes.
 
 ### Installation
 
+Install from **R Universe**:
+
+```r
+options(repos = c(getOption("repos"), royfrancis = "https://royfrancis.r-universe.dev"))
+install.packages('plummy')
 ```
-install.packages(c("ggplot2", "scales", "showtext", "remotes"), 
-  repos="https://cloud.r-project.org/")
-remotes::install_github("royfrancis/plummy")
+
+Install from **GitHub**:
+
+```r
+install.packages(c("ggplot2","sysfonts","showtext","remotes"))
+remotes::install_github('royfrancis/plummy')
 ```
 
 ### Acknowledgements
 
 - This code is adapted from [hrbrmstr](https://github.com/hrbrmstr/hrbrthemes)
 - Credit to <span><a href="https://www.flaticon.com/"><img src="flaticon.png" style="height:15px;vertical-align:middle;"></a></span> for graphics.
-
-### Disclaimer
-
-This R package is offered free and without warranty of any kind, either expressed or implied. I will not be held liable to you for any damage arising out of the use, modification or inability to use this program. This R package can be used, redistributed and/or modified freely for non-commercial purposes subject to the original source being properly cited. Licensed under GPL-3.  

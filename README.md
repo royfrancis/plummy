@@ -4,14 +4,19 @@
 
 `plummy` is an R package with custom ggplot2 themes. See the [project website](http://royfrancis.github.io/plummy) for more details.
 
+Install from **R Universe**:
+
+```r
+options(repos = c(getOption("repos"), royfrancis = "https://royfrancis.r-universe.dev"))
+install.packages('plummy')
+```
+
+Install from **GitHub**:
+
 ```r
 install.packages(c("ggplot2","sysfonts","showtext","remotes"))
 remotes::install_github('royfrancis/plummy')
 ```
-
-## Disclaimer
-
-This R package is offered free and without warranty of any kind, either expressed or implied. I will not be held liable to you for any damage arising out of the use, modification or inability to use this program. This R package can be used, redistributed and/or modified freely for non-commercial purposes subject to the original source being properly cited. Licensed under GPL-3.  
 
 ## Acknowledgements
 
@@ -24,4 +29,4 @@ If you have an comments, suggestions, corrections or enchancements, kindly submi
 
 ---
 
-2024 • Roy M Francis  
+2026 • Roy Francis  

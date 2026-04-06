@@ -6,25 +6,49 @@ import_nunito <- function() {
   font_dir <- system.file("fonts", "nunito", package = "plummy")
 
   font_add(
-    family = "nunito", 
+    family = "nunito",
     regular = file.path(font_dir, "Nunito-Regular.ttf"),
     bold = file.path(font_dir, "Nunito-SemiBold.ttf"),
     italic = file.path(font_dir, "Nunito-Italic.ttf"),
     bolditalic = file.path(font_dir, "Nunito-SemiBoldItalic.ttf")
   )
-  
+
   # font_add(family = "nunito-200-extralight", file.path(font_dir, "Nunito-ExtraLight.ttf"))
   # font_add(family = "nunito-200-extralightitalic", file.path(font_dir, "Nunito-ExtraLightItalic.ttf"))
   font_add(family = "nunito-300-light", file.path(font_dir, "Nunito-Light.ttf"))
-  font_add(family = "nunito-300-lightitalic", file.path(font_dir, "Nunito-LightItalic.ttf"))
-  font_add(family = "nunito-400-regular", file.path(font_dir, "Nunito-Regular.ttf"))
-  font_add(family = "nunito-400-regularitalic", file.path(font_dir, "Nunito-Italic.ttf"))
-  font_add(family = "nunito-500-medium", file.path(font_dir, "Nunito-Medium.ttf"))
-  font_add(family = "nunito-500-mediumitalic", file.path(font_dir, "Nunito-MediumItalic.ttf"))
-  font_add(family = "nunito-600-semibold", file.path(font_dir, "Nunito-SemiBold.ttf"))
-  font_add(family = "nunito-600-semibolditalic", file.path(font_dir, "Nunito-SemiBoldItalic.ttf"))
+  font_add(
+    family = "nunito-300-lightitalic",
+    file.path(font_dir, "Nunito-LightItalic.ttf")
+  )
+  font_add(
+    family = "nunito-400-regular",
+    file.path(font_dir, "Nunito-Regular.ttf")
+  )
+  font_add(
+    family = "nunito-400-regularitalic",
+    file.path(font_dir, "Nunito-Italic.ttf")
+  )
+  font_add(
+    family = "nunito-500-medium",
+    file.path(font_dir, "Nunito-Medium.ttf")
+  )
+  font_add(
+    family = "nunito-500-mediumitalic",
+    file.path(font_dir, "Nunito-MediumItalic.ttf")
+  )
+  font_add(
+    family = "nunito-600-semibold",
+    file.path(font_dir, "Nunito-SemiBold.ttf")
+  )
+  font_add(
+    family = "nunito-600-semibolditalic",
+    file.path(font_dir, "Nunito-SemiBoldItalic.ttf")
+  )
   font_add(family = "nunito-700-bold", file.path(font_dir, "Nunito-Bold.ttf"))
-  font_add(family = "nunito-700-bolditalic", file.path(font_dir, "Nunito-BoldItalic.ttf"))
+  font_add(
+    family = "nunito-700-bolditalic",
+    file.path(font_dir, "Nunito-BoldItalic.ttf")
+  )
   # font_add(family = "nunito-800-extrabold", file.path(font_dir, "Nunito-ExtraBold.ttf"))
   # font_add(family = "nunito-800-extrabolditalic", file.path(font_dir, "Nunito-ExtraBoldItalic.ttf"))
   # font_add(family = "nunito-900-black", file.path(font_dir, "Nunito-Black.ttf"))

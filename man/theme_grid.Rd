@@ -20,12 +20,12 @@ theme_grid(
   title_size = base_size * scaling^2,
   title_face = "bold",
   title_color = "#2e4053",
-  title_margin = NULL,
+  title_margin = margin(b = 2),
   subtitle_family = "",
   subtitle_size = base_size * scaling,
   subtitle_face = "plain",
   subtitle_color = "#2e4053",
-  subtitle_margin = NULL,
+  subtitle_margin = margin(b = 6),
   strip_text_family = "",
   strip_text_size = base_size,
   strip_text_face = "bold",
@@ -44,7 +44,9 @@ theme_grid(
   axis_title_face = "plain",
   axis_title_color = "#2e4053",
   axis_title_just = "rt",
-  plot_margin = margin(25, 25, 25, 25),
+  plot_margin = margin(20, 20, 20, 20),
+  plot_title_position = "plot",
+  plot_caption_position = "plot",
   grid_color = "#cccccc",
   grid = TRUE,
   axis_color = "#cccccc",
@@ -65,7 +67,7 @@ theme_grid_nunito(...)
 theme_grid_plex(...)
 }
 \arguments{
-\item{...}{Arguments passed to `plummy::theme_grid()`}
+\item{...}{Arguments passed to \code{plummy::theme_grid()}}
 
 \item{base_family, base_size}{Base: font family and size}
 
@@ -89,6 +91,10 @@ theme_grid_plex(...)
 
 \item{plot_margin}{Plot margin}
 
+\item{plot_title_position}{Position of title/subtitle relative to panel (\code{"panel"}) or full plot (\code{"plot"}).}
+
+\item{plot_caption_position}{Position of caption relative to panel (\code{"panel"}) or full plot (\code{"plot"}).}
+
 \item{grid_color}{Grid color}
 
 \item{grid}{Panel grid (\code{TRUE}, \code{FALSE}, or a combination of \code{X}, \code{x}, \code{Y}, \code{y} denoting major and minor gridlines)}
@@ -105,7 +111,7 @@ theme_grid_plex(...)
 
 \item{leg_just}{Legend justification}
 
-\item{base_theme}{Base theme. Defaults to `theme_minimal()``.}
+\item{base_theme}{Base theme. Defaults to \code{theme_minimal()}.}
 }
 \description{
 ggplot2 grid theme.

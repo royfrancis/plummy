@@ -211,6 +211,13 @@ options(ggplot2.discrete.colour = palette_tableau()(20))
 options(ggplot2.discrete.fill = palette_tableau()(20))
 ```
 
+For more color palettes, here are a few recommendations:
+
+- Brewer and Viridis palettes are available in ggplot2 by default
+- [Emil Hvitfeld's **r-color-palettes**](https://github.com/EmilHvitfeldt/r-color-palettes) (Meta collection)
+- [Fabio Crameri's **scico**](https://github.com/thomasp85/scico) (Scientific and color blind friendly)
+- [**GeoDataViz-Toolkit**](https://github.com/OrdnanceSurvey/GeoDataViz-Toolkit/tree/master/Colours)
+
 ## Fonts
 
 Available fonts in the package can be listed using `list_fonts()`. Below is a preview of fonts.

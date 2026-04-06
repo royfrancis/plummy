@@ -6,9 +6,9 @@
 #'
 import_barlow <- function() {
   font_dir <- system.file("fonts", "barlow", package = "plummy")
-  
+
   font_add(
-    family = "barlow", 
+    family = "barlow",
     regular = file.path(font_dir, "Barlow-Regular.ttf"),
     bold = file.path(font_dir, "Barlow-SemiBold.ttf"),
     italic = file.path(font_dir, "Barlow-Italic.ttf"),
@@ -20,15 +20,39 @@ import_barlow <- function() {
   # font_add(family = "barlow-200-extralight", file.path(font_dir, "Barlow-ExtraLight.ttf"))
   # font_add(family = "barlow-200-extralightitalic", file.path(font_dir, "Barlow-ExtraLightItalic.ttf"))
   font_add(family = "barlow-300-light", file.path(font_dir, "Barlow-Light.ttf"))
-  font_add(family = "barlow-300-lightitalic", file.path(font_dir, "Barlow-LightItalic.ttf"))
-  font_add(family = "barlow-400-regular", file.path(font_dir, "Barlow-Regular.ttf"))
-  font_add(family = "barlow-400-regularitalic", file.path(font_dir, "Barlow-Italic.ttf"))
-  font_add(family = "barlow-500-medium", file.path(font_dir, "Barlow-Medium.ttf"))
-  font_add(family = "barlow-500-mediumitalic", file.path(font_dir, "Barlow-MediumItalic.ttf"))
-  font_add(family = "barlow-600-semibold", file.path(font_dir, "Barlow-SemiBold.ttf"))
-  font_add(family = "barlow-600-semibolditalic", file.path(font_dir, "Barlow-SemiBoldItalic.ttf"))
+  font_add(
+    family = "barlow-300-lightitalic",
+    file.path(font_dir, "Barlow-LightItalic.ttf")
+  )
+  font_add(
+    family = "barlow-400-regular",
+    file.path(font_dir, "Barlow-Regular.ttf")
+  )
+  font_add(
+    family = "barlow-400-regularitalic",
+    file.path(font_dir, "Barlow-Italic.ttf")
+  )
+  font_add(
+    family = "barlow-500-medium",
+    file.path(font_dir, "Barlow-Medium.ttf")
+  )
+  font_add(
+    family = "barlow-500-mediumitalic",
+    file.path(font_dir, "Barlow-MediumItalic.ttf")
+  )
+  font_add(
+    family = "barlow-600-semibold",
+    file.path(font_dir, "Barlow-SemiBold.ttf")
+  )
+  font_add(
+    family = "barlow-600-semibolditalic",
+    file.path(font_dir, "Barlow-SemiBoldItalic.ttf")
+  )
   font_add(family = "barlow-700-bold", file.path(font_dir, "Barlow-Bold.ttf"))
-  font_add(family = "barlow-700-bolditalic", file.path(font_dir, "Barlow-BoldItalic.ttf"))
+  font_add(
+    family = "barlow-700-bolditalic",
+    file.path(font_dir, "Barlow-BoldItalic.ttf")
+  )
   # font_add(family = "barlow-800-extrabold", file.path(font_dir, "Barlow-ExtraBold.ttf"))
   # font_add(family = "barlow-800-extrabolditalic", file.path(font_dir, "Barlow-ExtraBoldItalic.ttf"))
   # font_add(family = "barlow-900-black", file.path(font_dir, "Barlow-Black.ttf"))

@@ -18,13 +18,31 @@ import_inter <- function() {
   # font_add(family = "inter-200-extralight", file.path(font_dir, "Inter-ExtraLight.ttf"))
   # font_add(family = "inter-200-extralightitalic", file.path(font_dir, "Inter-ExtraLightItalic.ttf"))
   font_add(family = "inter-300-light", file.path(font_dir, "Inter-Light.ttf"))
-  font_add(family = "inter-300-lightitalic", file.path(font_dir, "Inter-LightItalic.ttf"))
-  font_add(family = "inter-400-regular", file.path(font_dir, "Inter-Regular.ttf"))
-  font_add(family = "inter-400-regularitalic", file.path(font_dir, "Inter-Italic.ttf"))
+  font_add(
+    family = "inter-300-lightitalic",
+    file.path(font_dir, "Inter-LightItalic.ttf")
+  )
+  font_add(
+    family = "inter-400-regular",
+    file.path(font_dir, "Inter-Regular.ttf")
+  )
+  font_add(
+    family = "inter-400-regularitalic",
+    file.path(font_dir, "Inter-Italic.ttf")
+  )
   font_add(family = "inter-500-medium", file.path(font_dir, "Inter-Medium.ttf"))
-  font_add(family = "inter-500-mediumitalic", file.path(font_dir, "Inter-MediumItalic.ttf"))
-  font_add(family = "inter-600-semibold", file.path(font_dir, "Inter-SemiBold.ttf"))
-  font_add(family = "inter-600-semibolditalic", file.path(font_dir, "Inter-SemiBoldItalic.ttf"))
+  font_add(
+    family = "inter-500-mediumitalic",
+    file.path(font_dir, "Inter-MediumItalic.ttf")
+  )
+  font_add(
+    family = "inter-600-semibold",
+    file.path(font_dir, "Inter-SemiBold.ttf")
+  )
+  font_add(
+    family = "inter-600-semibolditalic",
+    file.path(font_dir, "Inter-SemiBoldItalic.ttf")
+  )
   font_add(family = "inter-700-bold", file.path(font_dir, "Inter-Bold.ttf"))
   # font_add(family = "inter-700-bolditalic", file.path(font_dir, "Inter-BoldItalic.ttf"))
   # font_add(family = "inter-800-extrabold", file.path(font_dir, "Inter-ExtraBold.ttf"))

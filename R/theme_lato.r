@@ -6,23 +6,43 @@ import_lato <- function() {
   font_dir <- system.file("fonts", "lato", package = "plummy")
 
   font_add(
-    family = "lato", 
+    family = "lato",
     regular = file.path(font_dir, "Lato-Regular.ttf"),
     bold = file.path(font_dir, "Lato-Bold.ttf"),
     italic = file.path(font_dir, "Lato-Italic.ttf"),
     bolditalic = file.path(font_dir, "Lato-BoldItalic.ttf")
   )
-  
+
   # font_add(family = "lato-100-thin", file.path(font_dir, "Lato-Thin.ttf"))
   # font_add(family = "lato-100-thinitalic", file.path(font_dir, "Lato-ThinItalic.ttf"))
   font_add(family = "lato-300-light", file.path(font_dir, "Lato-Light.ttf"))
-  font_add(family = "lato-300-lightitalic", file.path(font_dir, "Lato-LightItalic.ttf"))
+  font_add(
+    family = "lato-300-lightitalic",
+    file.path(font_dir, "Lato-LightItalic.ttf")
+  )
   font_add(family = "lato-400-regular", file.path(font_dir, "Lato-Regular.ttf"))
-  font_add(family = "lato-400-regularitalic", file.path(font_dir, "Lato-Italic.ttf"))
+  font_add(
+    family = "lato-400-regularitalic",
+    file.path(font_dir, "Lato-Italic.ttf")
+  )
+  font_add(family = "lato-500-medium", file.path(font_dir, "Lato-Medium.ttf"))
+  font_add(
+    family = "lato-500-mediumitalic",
+    file.path(font_dir, "Lato-MediumItalic.ttf")
+  )
+  font_add(
+    family = "lato-600-semibold",
+    file.path(font_dir, "Lato-SemiBold.ttf")
+  )
+  font_add(
+    family = "lato-600-semibolditalic",
+    file.path(font_dir, "Lato-SemiBoldItalic.ttf")
+  )
   font_add(family = "lato-700-bold", file.path(font_dir, "Lato-Bold.ttf"))
-  font_add(family = "lato-700-bolditalic", file.path(font_dir, "Lato-BoldItalic.ttf"))
-  # font_add(family = "lato-900-black", file.path(font_dir, "Lato-Black.ttf"))
-  # font_add(family = "lato-900-blackitalic", file.path(font_dir, "Lato-BlackItalic.ttf"))
+  font_add(
+    family = "lato-700-bolditalic",
+    file.path(font_dir, "Lato-BoldItalic.ttf")
+  )
 }
 
 #' @rdname theme_grid
